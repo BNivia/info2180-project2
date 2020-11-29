@@ -19,6 +19,11 @@ CREATE TABLE `users` (
     PRIMARY KEY (`id`)
 );
 
+
+-- Grant user privilges
+GRANT ALL PRIVILEGES ON * TO 'admin'@'localhost' IDENTIFIED BY 'password123';
+
+
 -- adding admin 
 -- currently the password is not hashed. will figure out in a bit
 INSERT INTO `users` VALUES (1, 'Admin', 'User', 'password123', 'admin@project2.com', '2020-11-28');

@@ -8,7 +8,8 @@ $fname;
 $lname;
 $pwd;
 $email;
-$nregtest = "/^[a-z ,.'-]+$/";
+/**$nregtest = "/^[a-z ,.'-]+$/"; **/
+$nregtest = "/^[A-Za-z.\s-]+$/";
 $regtest = "/^[0-9a-zA-Z]+$/";
 $eregtest = "/.{1,}@[^.]{1,}/";
 

@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function(){
     email = document.getElementById('email');
     btn = document.getElementById('bttn');
     
-    n_regex = /^[a-z ,.'-]+$/;
+    //n_regex = /^[a-zA-Z-,.'-]+$/;
+    n_regex = /^[A-Za-z.\s-]+$/;
     pwrd_regex = /^[0-9a-zA-Z]+$/
     e_regex = /.{1,}@[^.]{1,}/;
     count = 0;
