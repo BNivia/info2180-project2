@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BugMe Issue Tracker</title>
-       <!--  <link rel="stylesheet" type="text/css" href="newuser.css">
-        <script type= "text/javascript" src="script.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="newuser.css">
+        <link rel="stylesheet" type="text/css" href="details.css">
+        <script type= "text/javascript" src="script.js"></script>
     </head>
 
     <body>
@@ -13,7 +14,7 @@
             <header>
                 <h3>BugMe Issue Tracker</h3>
             </header>
-            <h1>New User</h1>
+            
             <aside id="sidebar">
                 <ul>
                     <li><a class="link" href="" target="_blank">Home</a></li>
@@ -23,10 +24,37 @@
                 </ul>
             </aside>
 
-            <p id="issueNo" > Issue#: </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quam ligula, gravida et nibh vel, aliquet molestie nisi. Curabitur ac odio pulvinar, imperdiet dolor at, malesuada enim. Nullam et turpis id neque scelerisque commodo quis sit amet purus. Donec tristique lorem ac arcu laoreet pellentesque. Fusce consequat gravida mauris, vitae laoreet massa ultricies eget. Fusce fringilla viverra eleifend. In faucibus orci sit amet nibh sollicitudin, vel efficitur ex ultrices. Sed lorem leo, facilisis a molestie id, varius ut est. Nullam urna lacus, lobortis eget interdum eu, blandit luctus dolor.
-            </p>
+            
+            <div id="main">
+
+            
+                <h1 id="Issue title">Issue Title</h1>
+                <p id="issueNo" > Issue#: </p>
+
+                <aside id="right">
+                    <div id="info">
+                        <h6>Assigned to:</h6>
+                        <p>Tom Brady</p>
+
+                        <h6>Type</h6>
+                        <p>Proposal</p>
+
+                        <h6>Priority</h6>
+                        <p>Major</p>
+
+                        <h6>Status</h6>
+                        <p>Open</p>
+                    </div>
+                    <button id="closed">Mark as Closed</button>
+                    <br>
+                    <button id="progress">Mark as In Progress</button>
+                </aside>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quam ligula, gravida et nibh vel, aliquet molestie nisi. Curabitur ac odio pulvinar, imperdiet dolor at, malesuada enim. Nullam et turpis id neque scelerisque commodo quis sit amet purus. Donec tristique lorem ac arcu laoreet pellentesque. Fusce consequat gravida mauris, vitae laoreet massa ultricies eget. Fusce fringilla viverra eleifend. In faucibus orci sit amet nibh sollicitudin, vel efficitur ex ultrices. Sed lorem leo, facilisis a molestie id, varius ut est. Nullam urna lacus, lobortis eget interdum eu, blandit luctus dolor.
+                </p>
+            </div>    
+            
     </body>
 
 </html>
