@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function(){
     pwrd = document.getElementById('passwrd');
     email = document.getElementById('email');
     btn = document.getElementById('bttn');
-    error = document.getElementById('form-error');
     
     n_regex = /^[a-z ,.'-]+$/;
     pwrd_regex = /^[0-9a-zA-Z]+$/
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
             httpR.onreadystatechange = function(){
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 200){
                     var r = httpR.responseText;
-                    document.getElementById("error").innerHTML = r;
+                    document.getElementById("form-error").innerHTML = r;
                 }
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 404){
                     alert('ERROR - File not found.');

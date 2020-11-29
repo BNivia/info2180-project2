@@ -1,26 +1,36 @@
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
+    color: black;
 }
 
+.container {
+    display:grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 5% 95%;
+    grid-template-areas:    "header header"
+                            "sidebar main";
+
+}
 header{
+    grid-area: header;
     background-color: black;
     color:white;
     text-align: left;
-    padding:17px;
+    padding:10px;
     
 }
 
 main{
-    float:right;
+    grid-area: main;
     width: 70%;
     color:black;
     font-size:12px;
 
 }
 
-.sidebar{
-    float:left;
+aside{
+    grid-area: sidebar;
     width: 30%;
     background-color: #DFE0E2;
     color:black;
@@ -29,12 +39,13 @@ main{
 li{
     list-style:none;
 }
-is it me your looking forrrrr !!!!!HIIIIIIII 
-JORDI!!!!!!!!!
-
-Helllppp meeeeeee Jantaeeeeeeeeee WIITTHHHHH??
 
 .create{
-    background-color: ;
+    background-color: #48BB78;
+    color: white;
+}
+
+thead{
+    background-color: #DFE0E2;
 }
 
