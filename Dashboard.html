@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BugMe Issue Tracker</title>
     <link rel="stylesheet" type="text/css" href="Dashboard.css">
+    <script type= "text/javascript" src="dashboard.js"></script>
 </head>
 
     <body>
@@ -29,9 +30,9 @@
                 <button id="create">Create New Issue</button>
                 <div class="btn-group">
                     <p>Filter by: </p> 
-                    <button>ALL</button>
-                    <button>OPEN</button>
-                    <button>MY TICKETS</button>
+                    <button id="all">ALL</button>
+                    <button id="open">OPEN</button>
+                    <button id="myTicket">MY TICKETS</button>
                 </div>
                
 
@@ -46,12 +47,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><td>
-                            <td><td>
-                            <td><td>  
-                            <td><td>
-                            <td><td>
+                        <tr id="issue">
+                            <td id="title"><td>
+                            <td id="type"><td>
+                            <td id="status"><td>  
+                            <td id="assigned"><td>
+                            <td id="created"><td>
                         </tr>
                     </tbody>
                 </table>
