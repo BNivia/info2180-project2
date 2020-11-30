@@ -18,15 +18,32 @@
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
         //echo "Connected to $dbname at $host successfully. <br>";
         $query = filter_input(INPUT_POST, "query", FILTER_SANITIZE_STRING);
-
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        if($_POST["query"]){      
-            //echo"DATA RECIEVED <br>";
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //UPDATE ID TO GET THE VALUE WHEN A USER IS LOGGED IN
+        $id = 2; //filter_input(INPUT_POST, "query", FILTER_SANITIZE_STRING);
+        if($_POST["query"] == "all"){      
+
             $sql = $conn->query("SELECT s.id, s.title, s.type, s.status , u.firstname, u.lastname, s.created 
             FROM issues s JOIN users u on s.assigned_to = u.id ");
-            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            
         }
+        elseif ($_POST["query"] == "open")
+        {      
+
+            $sql = $conn->query("SELECT s.id, s.title, s.type, s.status , u.firstname, u.lastname, s.created 
+            FROM issues s JOIN users u on s.assigned_to = u.id 
+            WHERE s.status = 'Open'");
+            
+        }
+        elseif ($_POST["query"] == "my"){      
+// This needs to be updated with the users id
+            $sql = $conn->query("SELECT s.id, s.title, s.type, s.status , u.firstname, u.lastname, s.created 
+            FROM issues s JOIN users u on s.assigned_to = u.id 
+            WHERE u.id = $id");
+            
+        }
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         $conn = null;
     } 
     catch (PDOException $pe) 

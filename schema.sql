@@ -47,4 +47,4 @@ CREATE TABLE `issues`(
 
 INSERT INTO `issues` VALUES (0,'Database Not Updating',"The database is just not working. 
 We have tried to send various values. It could be an error with the php","Proposal",
-"Major","Open","2","3","20201124","20201125");
+"Major","Open","1","2","20201124","20201125");

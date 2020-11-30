@@ -16,14 +16,15 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    url = window.location.href;
-    httpR.open('POST', 'adduser.php', true);
-    httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    httpR.send(data);
+    var url = "displayIssue.php" + window.location.search;
+    console.log(url);
+    httpR.requestType = "json"
+    httpR.open('GET', url);
+    httpR.send();
     
     });
 
-updateFields(text)
+function updateFields(text)
 {
     /**type = document.getElementById('type');
     lname = document.getElementById('status');
@@ -31,7 +32,7 @@ updateFields(text)
     email = document.getElementById('created');**/
     
     //Get the elements at which I will need to insert the data from the database
-    var issue = document.getElementById("issue");
+    var issue = document.getElementById("main");
     issue.innerHTML = text;
 
 }
