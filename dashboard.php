@@ -15,7 +15,7 @@ try {
     echo "Connected to $dbname at $host successfully. <br>";
     $query = filter_input(INPUT_POST, "query", FILTER_SANITIZE_STRING);
 
-
+    var_dump($_POST);
     if($_POST["query"]){      
         echo"DATA RECIEVED <br>";
         //$pwd = password_hash($pwd, $algo, $options = null);

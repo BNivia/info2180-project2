@@ -36,10 +36,10 @@ function getRecords(search)
             alert('ERROR - File not found.');
         }
     }
+    console.log(search);
     let data = search;
     httpR.open('POST', 'dashboard.php', true);
-    httpR.setRequestHeader('Content-Type', 'application/json');
-    console.log(search);
+    httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     httpR.send(data);
 }
 
