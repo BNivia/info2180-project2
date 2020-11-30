@@ -33,11 +33,11 @@ INSERT INTO `users` VALUES (1, 'Admin', 'User', 'password123', 'admin@project2.c
 DROP TABLE IF EXISTS `issues`;
 CREATE TABLE `issues`(
     `id` INTEGER AUTO_INCREMENT,
-    `title` VARCHAR(20),
+    `title` VARCHAR(40),
     `description` TEXT,
     `type` VARCHAR(10),
     `priority` VARCHAR(10),
-    `status` VARCHAR(10),
+    `status` VARCHAR(20),
     `assigned_to` INTEGER,
     `created_by` INTEGER,
     `created` DATETIME,
@@ -45,3 +45,6 @@ CREATE TABLE `issues`(
     PRIMARY KEY (`id`)
 );
 
+INSERT INTO `issues` VALUES (0,'Database Not Updating',"The database is just not working. 
+We have tried to send various values. It could be an error with the php","Proposal",
+"Major","Open","2","3","20201124","20201125");
