@@ -36,11 +36,11 @@ function getRecords(search)
             alert('ERROR - File not found.');
         }
     }
+    
     console.log(search);
-    let data = search;
     httpR.open('POST', 'dashboard.php', true);
     httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    httpR.send(data);
+    httpR.send(search);
 }
 
 function updateFields(text)
@@ -50,7 +50,7 @@ function updateFields(text)
     pwrd = document.getElementById('assigned');
     email = document.getElementById('created');**/
     console.log("text is ",text);
-    var issue = document.getElementById("title");
+    var issue = document.getElementById("issue");
     issue.innerHTML = text;
 
 }
