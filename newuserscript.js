@@ -1,17 +1,15 @@
 //JavaScript for BugMe Issue Tracker
 
 document.addEventListener('DOMContentLoaded', function(){
-    fname = document.getElementById('fName');
-    lname = document.getElementById('lName');
-    pwrd = document.getElementById('passwrd');
-    email = document.getElementById('email');
-    btn = document.getElementById('bttn');
-    
-    //n_regex = /^[a-zA-Z-,.'-]+$/;
-    n_regex = /^[A-Za-z.\s-]+$/;
-    pwrd_regex = /^[0-9a-zA-Z]+$/
-    e_regex = /.{1,}@[^.]{1,}/;
-    count = 0;
+    var fname = document.getElementById('fName');
+    var lname = document.getElementById('lName');
+    var pwrd = document.getElementById('passwrd');
+    var email = document.getElementById('email');
+    var btn = document.getElementById('bttn');
+    var n_regex = /^[A-Za-z.\s-]+$/;
+    var pwrd_regex = /^[0-9a-zA-Z]+$/
+    var e_regex = /.{1,}@[^.]{1,}/;
+    var count = 0;
 
     btn.addEventListener('click', function(e){
         e.preventDefault();

@@ -1,3 +1,7 @@
+<?php
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +26,7 @@
 
             <header id="header">
                 <h1>BugMe Issue Tracker</h1>
+                <h2>Logged In by User: <?= $_SESSION['email']?></h2>
             </header>
 
             <main id="main">
