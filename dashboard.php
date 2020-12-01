@@ -1,9 +1,5 @@
 <?php
-
-    $host = 'localhost';
-    $dbname = 'schema';
-    $username = 'admin';
-    $password = 'password123';
+    require_once('conn.php');
 
     $allowedMethods = array(
         'POST'
