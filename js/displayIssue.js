@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function(){
     httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     httpR.send(id);
 
+    
+
 });
 
 function updateRecord(search)
@@ -66,6 +68,7 @@ function updateFields(text)
     {
         
         updateRecord("mark=closed");
+        
         //window.location.reload();
     
     });

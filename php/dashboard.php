@@ -36,7 +36,7 @@
         elseif ($_POST["query"] == "my"){      
 // This needs to be updated with the users id
             $id =intval($_POST["id"]);
-            print($id);
+            
             $_SESSION['id'] = $id;
             $sql = $conn->query("SELECT s.id, s.title, s.type, s.status , u.firstname, u.lastname, s.created 
             FROM issues s JOIN users u on s.assigned_to = u.id 
