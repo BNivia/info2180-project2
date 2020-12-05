@@ -10,7 +10,7 @@ CREATE TABLE `users` (
     `id` INTEGER AUTO_INCREMENT,
     `firstname` VARCHAR(20),
     `lastname` VARCHAR(20),
-    `pwrd` VARCHAR(12),
+    `pwrd` VARCHAR(100),
     `email` VARCHAR(40),
     `date_joined` DATETIME default CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
@@ -24,7 +24,7 @@ VALUES (
         1,
         'Admin',
         'User',
-        'password123',
+        '$2y$10$1oRysgcgmK1gEO6Q.DnbfuP.uRi8Fumgi7wWDK3dvug1Y94CAlBwm',
         'admin@project2.com',
         '2020-11-28'
     );

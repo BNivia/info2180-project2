@@ -9,18 +9,26 @@
             <title>BugMe Issue Tracker</title>
         </head>
         <body>
-            <header>
-                <h1>BugMe Issue Tracker</h1>
-            </header>
+            <div class="h-container">
+                <header>
+                    <ul>
+                        <li><img src="css/bug.png"></li>
+                        <li><h1>BugMe Issue Tracker</h1></li>
+                    </ul>
+                </header>
+            </div>
             <main>
                 <h2>Login</h2>
-                <form>
-                    <label for="email">E-mail</label>
-                    <input type="text" name="email" id="email"></form></br>
-                    <label for="username">Password</label>
-                    <input type="password" name="pwrd" id="pwrd"></form></br>
-                    <button type="submit" class="btn" id="login-btn">Login</button>
-                </form>
+                <div id="error"></div>
+                <div class="login-form">
+                    <form>
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email"></br>
+                        <label for="username">Password</label>
+                        <input type="password" name="pwrd" id="pwrd"></br>
+                        <button type="submit" class="btn" id="login-btn">Login</button>
+                    </form>
+                </div>
             </main>
         </body>
     </html>

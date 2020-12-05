@@ -71,13 +71,13 @@ try{
                 $lname = strval($name[1]);
                 $idsql = $conn->query("SELECT `id` FROM `users` WHERE `firstname` = '$fname' AND `lastname` = '$lname'");
                 $assigned = $idsql->fetchAll(PDO::FETCH_ASSOC);
-                $assigned_id = intval($assigned[0]);
+                $assigned_id = intval($assigned[0]['id']);
                
                 
                 $newidsql = $conn->query("SELECT `id` FROM `users` WHERE email = '$email'");
                 $created_id = $newidsql->fetchAll(PDO::FETCH_ASSOC);
                 $created = intval($created_id[0]);
-                var_dump($assigned_id);
+                print_r($assigned);
                 var_dump($created);
 
 

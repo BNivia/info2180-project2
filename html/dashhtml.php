@@ -15,51 +15,45 @@
 
     <body>
         <div class="container">
-            <aside id="sidebar">
-                <ul>
-                    <li><a class="link" href="dashhtml.php">Home</a></li>
-                    <li><a class="link" href="newUser.php">Add User</a></li>
-                    <li><a class="link" href="NewIssuehtml.php">New Issue</a></li>
-                    <li><a class="link" href="">Logout</a></li>
-                </ul>
-            </aside>
-            <header id="header">
-                <h1>BugMe Issue Tracker</h1>
-                <h2>Logged In by User: <?= $_SESSION['email']?></h2>
-            </header>
-
+            <div class="h-container">
+                <header>
+                    <ul>
+                        <li><img src="../css/bug.png"></li>
+                        <li><h1>BugMe Issue Tracker</h1></li>
+                    </ul>
+                    <h2>Logged In by User: <?= $_SESSION['email']?></h2>
+                </header>
+            </div>
             <main id="main">
-                <h2>Issues </h2>
-                
-                <button id="create">Create New Issue</button>
+                <aside id="sidebar">
+                    <ul>
+                        <li><a class="link" href="dashhtml.php">Home</a></li>
+                        <li><a class="link" href="newUser.php">Add User</a></li>
+                        <li><a class="link" href="NewIssuehtml.php">New Issue</a></li>
+                        <li><a class="link" href="../php/logout.php">Logout</a></li>
+                    </ul>
+                </aside>
+                <div class="h-line">
+                    <h2>Issues </h2>
+                    <button id="create">Create New Issue</button>
+                </div>
                 <div class="btn-group">
                     <p>Filter by: </p> 
                     <button id="all">ALL</button>
                     <button id="open">OPEN</button>
                     <button id="myTicket">MY TICKETS</button>
                 </div>
-               
-
                 <table id="Issuestab"> 
                     <thead>
                         <tr>
-                            <th scope="col">Title</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Assigned To</th>
-                            <th scope="col">Created</th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Assigned To</th>
+                            <th>Created</th>
                         </tr>
                     </thead>
-                    <tbody id="issue">
-                        <!--
-                        <tr >
-                            <td id="title"><td>
-                            <td id="type"><td>
-                            <td id="status"><td>  
-                            <td id="assigned"><td>
-                            <td id="created"><td>
-                        </tr> -->
-                    </tbody>
+                    <tbody id="issue"></tbody>
                 </table>
             </main>
         </div>

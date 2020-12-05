@@ -38,7 +38,7 @@ function getRecords(search)
     }
     
     console.log(search);
-    httpR.open('POST', './php/dashboard.php', true);
+    httpR.open('POST', '../php/dashboard.php', true);
     httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     httpR.send(search);
 }

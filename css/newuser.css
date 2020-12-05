@@ -9,22 +9,35 @@ html {
   margin: auto;
 }
 
+.h-container {
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+}
+
+header {
+  color: #fff;
+  padding: 10px;
+  font-size: 10px;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  margin-left: 0px;
+}
+
+header li {
+  list-style-type: none;
+  display: inline;
+}
+
 aside {
   background-color: #dfe0e2;
   width: 20%;
   height: 500px;
   float: left;
   margin-right: 15px;
-}
-
-form {
-  width: 100%;
-}
-
-header {
-  background-color: black;
-  color: #fff;
-  padding: 5px;
 }
 
 li {
@@ -40,20 +53,38 @@ a {
   text-decoration: none;
 }
 
+input,
+select {
+  width: 70%;
+}
+
+input:hover,
+input:active {
+  border: 2px solid #90caf9;
+  width: 600px;
+  height: 34px;
+}
+
 button {
-  background-color: rgba(48, 94, 179, 0.959);
+  border: 1px solid #1565c0;
+  border-radius: 5px;
   width: 150px;
-  height: 30px;
-  border-radius: 4px;
-  color: white;
+  background-color: #1565c0;
+  color: #fff;
+  padding: 7px 20px;
+  margin-right: 5px;
   text-align: center;
-  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0px;
 }
 
 .error {
-  border: 1px solid red;
+  border: 2px solid red;
+  border-radius: 5px;
+  border-style: solid;
 }
-
 .no-error {
-  border: 1px solid green;
+  border: 2px solid green;
+  border-radius: 5px;
+  border-style: solid;
 }

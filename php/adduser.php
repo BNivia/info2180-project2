@@ -47,8 +47,9 @@ try {
         echo"DATA RECIEVED <br>";
         //$pwd = password_hash($pwd, $algo, $options = null);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pswrd = password_hash($pwd, PASSWORD_DEFAULT);
         $sql = "INSERT INTO users(firstname, lastname, pwrd, email)
-        VALUES ('$fname', '$lname', '$pwd', '$email')";
+        VALUES ('$fname', '$lname', '$pswrd', '$email')";
         $conn->exec($sql);
     }
     $conn = null;

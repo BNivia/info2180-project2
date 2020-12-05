@@ -12,17 +12,21 @@
         <script type= "text/javascript" src="../js/newuserscript.js"></script>
     </head>
         <body>
-        <div id="container">
-            <header>
-                <h3>BugMe Issue Tracker</h3>
-                <h2>Logged In by User: <?= $_SESSION['email']?></h2>
-            </header>
+        <div class="h-container">
+                <header>
+                    <ul>
+                        <li><img src="css/bug.png"></li>
+                        <li><h1>BugMe Issue Tracker</h1></li>
+                    </ul>
+                    <h2>Logged In by User: <?= $_SESSION['email']?></h2>
+                </header>
+            </div>
             <aside id="sidebar">
                 <ul>
                     <li><a class="link" href="dashhtml.php">Home</a></li>
                     <li><a class="link" href="newUser.php" >Add User</a></li>
                     <li><a class="link" href="NewIssuehtml.php">New Issue</a></li>
-                    <li><a class="link" href="">Logout</a></li>
+                    <li><a class="link" href="logout.php">Logout</a></li>
                 </ul>
             </aside>
             <h1>New User</h1>

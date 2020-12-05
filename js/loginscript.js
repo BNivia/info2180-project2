@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var email = document.getElementById('email');
     var pwrd = document.getElementById('pwrd');
     var btn = document.getElementById('login-btn');
-    var pwrd_regex = /^[0-9a-zA-Z]+$/
+    var mssg = document.getElementById('error');
+    var pwrd_regex = /^[0-9a-zA-Z]{8,}$/
     var e_regex = /.{1,}@[^.]{1,}/;
     var count = 0;
 
@@ -13,31 +14,29 @@ document.addEventListener("DOMContentLoaded", function () {
         //email validatiion
         if(email.value === "" || email.value === null){
             email.classList.add("error");
+            mssg.innerHTML= "Email field is empty.";
         } else if (email.value !== "" || email.value !== null){
             if (email.value.match(e_regex)){
                 email.classList.add("no-error");
                 count++;
             }else{
                 email.classList.add("error");
+                mssg.innerHTML= "Email is invalid.";
             }
-        }else{
-            email.classList.add("no-error");
-            count++;
         }
 
         //password validation
         if(pwrd.value === "" || pwrd.value === null){
             pwrd.classList.add("error");
+            mssg.innerHTML= "Password field is empty.";
         } else if (pwrd.value !== "" || pwrd.value !== null){
             if (pwrd.value.match(pwrd_regex)){
                 pwrd.classList.add("no-error");
                 count++;
             }else{
                 pwrd.classList.add("error");
+                mssg.innerHTML= "Password is invalid.";
             }
-        }else{
-            pwrd.classList.add("no-error");
-            count++;
         }
 
         if (count == 2){

@@ -1,9 +1,8 @@
 <?php
+    session_start();
     require_once('conn.php');
 
-    $allowedMethods = array(
-        'POST'
-    );
+    $allowedMethods = array('POST');
 
     /**$nregtest = "/^[a-z ,.'-]+$/"; **/
     $nregtest = "/^[A-Za-z.\s-]+$/";
@@ -15,7 +14,7 @@
         //echo "Connected to $dbname at $host successfully. <br>";
         $query = filter_input(INPUT_POST, "query", FILTER_SANITIZE_STRING);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+
         //UPDATE ID TO GET THE VALUE WHEN A USER IS LOGGED IN
         $id = 2; //filter_input(INPUT_POST, "query", FILTER_SANITIZE_STRING);
         if($_POST["query"] == "all"){      
@@ -53,7 +52,7 @@
 
 <?php foreach ($results as $row): ?>
     <tr>
-        <td scope="col"> <b>#<?= $row['id']?></b>  <a href="FullDetailsPage.html?query=<?= $row['id']?>"><?=$row['title']; ?></a>   </td>
+        <td scope="col"><b>#<?= $row['id']?></b>  <a href="FullDetailsPage.html?query=<?= $row['id']?>"><?=$row['title']; ?></a>   </td>
         <td scope="col"><?= $row['type']; ?></td>
         <td scope="col"><?= $row['status']; ?></td>
         <td scope="col"><?= $row['firstname'];?> <?=$row['lastname']; ?></td>
