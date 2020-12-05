@@ -1,5 +1,6 @@
 <?php
  session_start();
+ $id = $_SESSION['id'];
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +23,14 @@
             </div>
             <aside id="sidebar">
                 
-                    <li><img src="../css/home.png"><a class="link" href="dashhtml.php">Home</a></li>
+                    <li><img src="../css/home.png"><a class="link" href="dashhtml.php?id=<?=$id?>">Home</a></li>
                     <li><img src="../css/adduser.png"><a class="link" href="newUser.php" >Add User</a></li>
                     <li><img src="../css/add.png"><a class="link" href="NewIssuehtml.php">New Issue</a></li>
-                    <li><img src="../css/logout.png"><a class="link" href="logout.php">Logout</a></li>
+                    <li><img src="../css/logout.png"><a class="link" href="../php/logout.php">Logout</a></li>
                 
             </aside>
             <h1>New User</h1>
+            <div id = "form-error"></div><br>
             <form> 
                 <div class="form">
                     <label for="fName">Firstname</label></br>
@@ -46,8 +48,6 @@
                     <button id="bttn" type="submit" name="bttn">Submit</button></br></br>
                 </div>
             </form>
-            
-            <div id = "form-error"></div>
         </div>
     </body>
 </html>

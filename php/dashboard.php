@@ -17,7 +17,7 @@
         $email = $_SESSION['email']; 
         $newidsql = $conn->query("SELECT `id` FROM `users` WHERE email = '$email'");
         $my_id = $newidsql->fetchAll(PDO::FETCH_ASSOC);
-        $id = intval($my_id[0]);
+        
 
         if($_POST["query"] == "all"){      
 
@@ -35,11 +35,15 @@
         }
         elseif ($_POST["query"] == "my"){      
 // This needs to be updated with the users id
+            $id =intval($_POST["id"]);
+            print($id);
+            $_SESSION['id'] = $id;
             $sql = $conn->query("SELECT s.id, s.title, s.type, s.status , u.firstname, u.lastname, s.created 
             FROM issues s JOIN users u on s.assigned_to = u.id 
             WHERE u.id = $id");
             
         }
+
         $results = $sql->fetchAll(PDO::FETCH_ASSOC);
         $conn = null;
     } 
@@ -56,11 +60,9 @@
         <td scope="col"><?= $row['type']; ?></td>
         <? if ($row['status'] == 'Open'):?>
             <td scope="col" class="center"><p id="open"><?= $row['status']; ?></p></td>
-        <? endif;?>
-        <? if ($row['status'] == 'In Progress'):?>
+        <? elseif($row['status'] == 'In Progress'):?>
             <td scope="col" class="center"><p id="progress"><?= $row['status']; ?></p></td>
-        <? endif;?>
-        <? if ($row['status'] == 'Closed'):?>
+            <? elseif($row['status'] == 'Closed'):?>
             <td scope="col" class="center"><p id="closed"><?= $row['status']; ?></p></td>
         <? endif;?>
         <td scope="col"><?= $row['firstname'];?> <?=$row['lastname']; ?></td>

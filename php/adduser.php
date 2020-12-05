@@ -9,6 +9,7 @@ $email;
 $nregtest = "/^[A-Za-z.\s-]+$/";
 $regtest = "/^[0-9a-zA-Z]+$/";
 $eregtest = "/.{1,}@[^.]{1,}/";
+$p_regex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -24,7 +25,7 @@ try {
         $fname = strval($f);
         echo"First Name WERK!! <br>";
     }
-    if (empty($l) || !preg_match ($nregtest, $l)){
+    if (empty($l) || !preg_match ($p_regex, $l)){
         echo"Last Name Error <br>";
     }else{
         $lname = strval($l);

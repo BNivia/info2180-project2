@@ -40,7 +40,8 @@
             {
                 $sql = $conn->query("UPDATE issues SET status= 'In Progress'
                 WHERE issues.id = $query");
-            }    
+            } 
+            header("Refresh:0");   
         }
         
     } 
@@ -71,6 +72,8 @@
     <br>
             <button id="closed">Mark as Closed</button>
             <br>
+            <br>
+
             <button id="progress">Mark as In Progress</button>
 </aside>
 <?php

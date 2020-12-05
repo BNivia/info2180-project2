@@ -1,5 +1,8 @@
 //JavaScript for BugMe Issue Tracker
 
+var id = window.location.search.slice(1);
+//var id = $_SESSION['id'];
+
 document.addEventListener('DOMContentLoaded', function(){
     //Get the elements at which I will need to insert the data from the database
     allBtn = document.getElementById('all');
@@ -7,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
     ticketBtn = document.getElementById('myTicket');
     create = document.getElementById('create');
 
+    console.log(id);
     getRecords("query=all");
     allBtn.addEventListener("click",function() 
     {
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
     });
     ticketBtn.addEventListener("click",function()
     {
-        getRecords("query=my")
+        getRecords("query=my&"+id)
         ticketBtn.classList.add("selected");
         allBtn.classList.remove("selected");
         openBtn.classList.remove("selected");

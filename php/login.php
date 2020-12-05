@@ -28,13 +28,13 @@
                 $pwd = strval($clean_pswrd);
             }
             if( isset($email)  && isset($pwd)){
-                $q = $conn->query("SELECT email FROM users WHERE email = '$email'");
+                $q = $conn->query("SELECT email,id FROM users WHERE email = '$email'");
                 $results = $q->fetchAll(PDO::FETCH_ASSOC);
                 $_SESSION['email'] = $results[0]['email'];
-                $q = $conn->query("SELECT pwrd FROM users WHERE email = '$email'");
+                $q = $conn->query("SELECT pwrd,id FROM users WHERE email = '$email'");
                 $results = $q->fetchAll(PDO::FETCH_ASSOC);
                 if (password_verify(strval($pwd), $results[0]['pwrd'])){
-                    echo "Login successful.";
+                    print($results[0]['id']);
                 }
             }else{
                 echo "Error.";

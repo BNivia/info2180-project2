@@ -66,13 +66,13 @@ function updateFields(text)
     {
         
         updateRecord("mark=closed");
-        location.reload();
+        //window.location.reload();
     
     });
 
     progressBtn.addEventListener("click",function() 
     {
         updateRecord("mark=progress");
-        location.reload();
+        //window.location.reload();
     });
 }

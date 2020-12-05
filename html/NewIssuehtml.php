@@ -1,5 +1,6 @@
 <?php
  session_start();
+ $id = $_SESSION['id'];
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +23,13 @@
         </div>
         <div class="side">
             <aside>
-                
-                    <li><img src="../css/home.png"><a class="link" href="dashhtml.php">Home</a></li>
+                    <?$id;?>
+                    <li><img src="../css/home.png"><a class="link" href="dashhtml.php?id=<?=$id?>">Home</a></li>
                     <?php if ($_SESSION['email'] == 'admin@project2.com'):?>
                         <li><img src="../css/adduser.png"><a class="link" href="newUser.php">Add User</a></li>
                     <?php endif; ?>
                     <li><img src="../css/add.png"><a class="link" href="NewIssuehtml.php">New Issue</a></li>
-                    <li><img src="../css/logout.png"><a class="link" href="">Logout</a></li>
+                    <li><img src="../css/logout.png"><a class="link" href="../php/logout.php">Logout</a></li>
                 
             </aside>
         </div>

@@ -45,8 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 200){
                     var r = httpR.responseText;
                     console.log(r);
-                    if(r.trim() == "Login successful."){
-                        window.location.assign("./html/dashhtml.php");
+                    if(r.trim() != "Error"){
+                        url = "./html/dashhtml.php?" + "id=" + r;
+                        window.location.assign(url);
                     }
                 }
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 404){

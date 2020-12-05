@@ -1,63 +1,55 @@
-aside#right
-{
-    background-color: white;
-    width:20%;
-    height:400px;
-    float:right;
-
+aside#right {
+  background-color: white;
+  width: 20%;
+  height: 400px;
+  float: right;
 }
 
-#info
-{
-    background-color: #DFE0E2;
-    border: 2px solid grey;
-    border-radius: 15px;
-    padding-left: 20px;
+#info {
+  background-color: #dfe0e2;
+  border: 2px solid grey;
+  border-radius: 15px;
+  padding-left: 20px;
 }
-#arrow{
-    width: 10px;
-    height: 10px;
-}
-
-#issueNo
-{
-    font-weight: bold;
-}
-#grey
-{
-    color: grey;
+#arrow {
+  width: 10px;
+  height: 10px;
 }
 
-button
-{
-    margin-top: 10px;
-    width:100%;
-    height: 30px;
-    border-radius: 5px;
-    color: white;
-    text-align: center;
-    
+#issueNo {
+  font-weight: bold;
+}
+#grey {
+  color: grey;
 }
 
-#progress
-{
-    background-color: green;
-    width:100%;
-    height: 30px;
+button {
+  margin-top: 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
 }
 
-#closed
-{
-    background-color: blue;
-    width:100%;
-    height: 30px;
+#progress {
+  background-color: #48bb78;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #48bb78;
 }
-#desc
-{
-    width: 750px;
-    margin-bottom: 5px;
+
+#closed {
+  background-color: #1565c0;
+  width: 100%;
+  height: 30px;
+  padding-bottom: 5px;
+  border: 1px solid #1565c0;
 }
-#main
-{
-    margin-left: 50px;
+#desc {
+  width: 750px;
+  margin-bottom: 5px;
+}
+#main {
+  margin-left: 50px;
 }

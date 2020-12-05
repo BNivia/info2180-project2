@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function(e){
-    location.assign("../index.html");
+    window.location.assign("../index.html");
 });
