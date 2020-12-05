@@ -33,9 +33,7 @@
         </aside>
         <div class="h-line">
             <h2>Issues 
-            <?php if ($_SESSION['email'] == 'admin@project2.com'):?>
-                <button id="create">Create New Issue</button>
-            <?php endif; ?>
+            <button id="create">Create New Issue</button>
             </h2>
         </div>
         <div class="btn-group">

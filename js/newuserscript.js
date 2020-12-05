@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var btn = document.getElementById('bttn');
     var mssg= document.getElementById('form-error');
     var n_regex = /^[A-Za-z.\s-]+$/;
-    var pwrd_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+    var pwrd_regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
     var e_regex = /.{1,}@[^.]{1,}/;
     var count = 0;
 
