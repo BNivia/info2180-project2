@@ -34,7 +34,6 @@
                 // This needs to be updated with the users id
                 $sql = $conn->query("UPDATE issues SET status= 'Closed'
                 WHERE issues.id = $query");
-                $text = "rasta";
 
             }
             elseif($_POST["mark"]== "progress")
@@ -51,7 +50,7 @@
     }   
 ?>
 
-<h1 id="Issue title"> <?=$rasta; ?> <?=$row['title']; ?> </h1>
+<h1 id="Issue title"> <?=$row['title']; ?> </h1>
 <p id="issueNo"> Issue#: <?= $row['id']?> </p>
 
 <p id="desc"> <?= $row['description']?> </p>
@@ -70,9 +69,9 @@
         <p><?= $row['status']; ?></p>
     </div>
     <br>
-        <button id="closed">Mark as Closed</button>
-        <br>
-        <button id="progress">Mark as In Progress</button>
+            <button id="closed">Mark as Closed</button>
+            <br>
+            <button id="progress">Mark as In Progress</button>
 </aside>
 <?php
 $date = new DateTime($row['created']);
@@ -87,4 +86,3 @@ $updated = $date->format('l, F d y h:i:s');
     <br> 
     <img id="arrow" src="../css/little-arrow.png"> Last updated on: <?=$updated; ?>
 </P>
-
