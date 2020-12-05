@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     var r = httpR.responseText;
                     console.log(r);
                     if(r.trim() == "Login successful."){
-                        location.assign("./dashhtml.php");
+                        location.assign("./html/dashhtml.php");
                     }
                 }
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 404){
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
             let data = 'pwrd='+pwrd.value+'&email='+email.value;
-            httpR.open('POST', 'login.php', true);
+            httpR.open('POST', './php/login.php', true);
             httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             httpR.send(data);
         }

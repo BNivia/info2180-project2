@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             }
             let data = 'fname='+fname.value+'&lname='+lname.value+'&pwrd='+pwrd.value+'&email='+email.value;
-            httpR.open('POST', 'adduser.php', true);
+            httpR.open('POST', '../php/adduser.php', true);
             httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             httpR.send(data);
         }

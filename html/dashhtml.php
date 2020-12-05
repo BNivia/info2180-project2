@@ -9,21 +9,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BugMe Issue Tracker</title>
-    <link rel="stylesheet" type="text/css" href="Dashboard.css">
-    <script type= "text/javascript" src="dashboard.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/Dashboard.css">
+    <script type= "text/javascript" src="../js/dashboard.js"></script>
 </head>
 
     <body>
         <div class="container">
             <aside id="sidebar">
                 <ul>
-                    <li><a class="link" href="" target="_blank">Home</a></li>
-                    <li><a class="link" href="" target="_blank">Add User</a></li>
-                    <li><a class="link" href="" target="_blank">New Issue</a></li>
-                    <li><a class="link" href="" target="_blank">Logout</a></li>
+                    <li><a class="link" href="dashhtml.php">Home</a></li>
+                    <li><a class="link" href="newUser.php">Add User</a></li>
+                    <li><a class="link" href="NewIssuehtml.php">New Issue</a></li>
+                    <li><a class="link" href="">Logout</a></li>
                 </ul>
             </aside>
-
             <header id="header">
                 <h1>BugMe Issue Tracker</h1>
                 <h2>Logged In by User: <?= $_SESSION['email']?></h2>

@@ -1,6 +1,6 @@
 <?php
-
 require_once('conn.php');
+
 $fname;
 $lname;
 $pwd;
@@ -27,7 +27,7 @@ try {
     if (empty($l) || !preg_match ($nregtest, $l)){
         echo"Last Name Error <br>";
     }else{
-        $lname = strval($p);
+        $lname = strval($l);
         echo"Last Name OK!! <br>";
     }
     if (empty($p) || !preg_match ($regtest, $p)){
