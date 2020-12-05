@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    var url = "./php/displayIssue.php" + window.location.search;
+    var url = "../php/displayIssue.php" + window.location.search;
     console.log(url);
     httpR.requestType = "json"
     httpR.open('GET', url);

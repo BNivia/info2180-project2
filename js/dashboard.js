@@ -6,17 +6,21 @@ document.addEventListener('DOMContentLoaded', function(){
     openBtn = document.getElementById('open');
     ticketBtn = document.getElementById('myTicket');
 
-    allBtn.addEventListener("click",function()
+    getRecords("query=all");
+    allBtn.addEventListener("click",function() 
     {
         getRecords("query=all")
+        allBtn.classList.add("selected");
     });
     openBtn.addEventListener("click",function()
     {
         getRecords("query=open")
+        openBtn.classList.add("selected");
     });
     ticketBtn.addEventListener("click",function()
     {
         getRecords("query=my")
+        ticketBtn.classList.add("selected");
     });
     
     });

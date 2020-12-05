@@ -15,19 +15,18 @@
         <div class="h-container">
                 <header>
                     <ul>
-                        <li><img src="css/bug.png"></li>
+                        <li><img src="../css/bug.png"></li>
                         <li><h1>BugMe Issue Tracker</h1></li>
                     </ul>
-                    <h2>Logged In by User: <?= $_SESSION['email']?></h2>
                 </header>
             </div>
             <aside id="sidebar">
-                <ul>
-                    <li><a class="link" href="dashhtml.php">Home</a></li>
-                    <li><a class="link" href="newUser.php" >Add User</a></li>
-                    <li><a class="link" href="NewIssuehtml.php">New Issue</a></li>
-                    <li><a class="link" href="logout.php">Logout</a></li>
-                </ul>
+                
+                    <li><img src="../css/home.png"><a class="link" href="dashhtml.php">Home</a></li>
+                    <li><img src="../css/adduser.png"><a class="link" href="newUser.php" >Add User</a></li>
+                    <li><img src="../css/add.png"><a class="link" href="NewIssuehtml.php">New Issue</a></li>
+                    <li><img src="../css/logout.png"><a class="link" href="logout.php">Logout</a></li>
+                
             </aside>
             <h1>New User</h1>
             <form> 
