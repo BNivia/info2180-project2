@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 200)
         {
             updateFields(httpR.responseText);
+
         }
         if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 404)
         {
@@ -21,8 +22,6 @@ document.addEventListener('DOMContentLoaded', function(){
     httpR.open('POST', '../php/displayIssue.php', true);
     httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     httpR.send(id);
-
-    
 
 });
 
@@ -48,7 +47,6 @@ function updateRecord(search)
     httpR.send(searchVal);
 }
 
-
 function updateFields(text)
 {
     /**type = document.getElementById('type');
@@ -59,7 +57,6 @@ function updateFields(text)
     //Get the elements at which I will need to insert the data from the database
     var issue = document.getElementById("main");
     issue.innerHTML = text;
-    
     closedBtn = document.getElementById("closed");
     console.log(closedBtn);
     progressBtn = document.getElementById("progress");
@@ -69,13 +66,14 @@ function updateFields(text)
         
         updateRecord("mark=closed");
         
-        //window.location.reload();
+        window.location.reload();
     
     });
 
     progressBtn.addEventListener("click",function() 
     {
         updateRecord("mark=progress");
-        //window.location.reload();
+        window.location.reload();
     });
+    
 }

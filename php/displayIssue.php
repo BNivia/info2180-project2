@@ -24,12 +24,12 @@
             WHERE s.id = $query ");
             
             $row = $sql->fetchAll(PDO::FETCH_ASSOC)[0];
-            header("Refresh:0");  
+              
         }
          
         if (isset($_POST["mark"]))
         {
-            header("Refresh:0");
+            
             if($_POST["mark"]== "closed")
             {
                 // This needs to be updated with the users id
@@ -42,10 +42,9 @@
             {
                 $sql = $conn->query("UPDATE issues SET status= 'In Progress'
                 WHERE issues.id = $query");
-            } 
-            header("Refresh:0");   
+            }   
         }
-        
+        header("Refresh:0");    
     } 
     catch (PDOException $pe) 
     {
