@@ -87,6 +87,10 @@ document.addEventListener('DOMContentLoaded', function(){
             httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             httpR.send(data);
         }
+        else
+        {
+            
+        }
     });
 });
 

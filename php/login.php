@@ -31,10 +31,11 @@
                 $q = $conn->query("SELECT email,id FROM users WHERE email = '$email'");
                 $results = $q->fetchAll(PDO::FETCH_ASSOC);
                 $_SESSION['email'] = $results[0]['email'];
+                $_SESSION["id"] = $results[0]['id'];
                 $q = $conn->query("SELECT pwrd,id FROM users WHERE email = '$email'");
                 $results = $q->fetchAll(PDO::FETCH_ASSOC);
                 if (password_verify(strval($pwd), $results[0]['pwrd'])){
-                    print($results[0]['id']);
+                    echo($results[0]['id']);
                 }
             }else{
                 echo "Error.";

@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var email = document.getElementById('email');
-    var pwrd = document.getElementById('pwrd');
+    
     var btn = document.getElementById('login-btn');
-    var mssg = document.getElementById('error');
+    
     var pwrd_regex = /^[0-9a-zA-Z]{8,}$/
     var e_regex = /.{1,}@[^.]{1,}/;
     var count = 0;
-    var u_type;
 
     btn.addEventListener('click', function (e){
         e.preventDefault();
+
+        var email = document.getElementById('email');
+        var pwrd = document.getElementById('pwrd');
+        var mssg = document.getElementById('error');
         httpR = new XMLHttpRequest();
 
         //email validatiion
@@ -44,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             httpR.onreadystatechange = function(){
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 200){
                     var r = httpR.responseText;
-                    console.log(r);
+                     console.log(r);
                     if(r.trim() != "Error"){
                         url = "./html/dashhtml.php?" + "id=" + r;
                         window.location.assign(url);
