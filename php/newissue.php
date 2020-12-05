@@ -77,15 +77,8 @@ try{
                 $newidsql = $conn->query("SELECT `id` FROM `users` WHERE email = '$email'");
                 $created_id = $newidsql->fetchAll(PDO::FETCH_ASSOC);
                 $created = intval($created_id[0]);
-                print_r($assigned);
-                var_dump($created);
 
-
-                
                 $conn->query("INSERT INTO `issues`(`title`,`description`, `type`, `priority`, `status`, `assigned_to`, `created_by`) VALUES ('$title', '$desc', '$type', '$priority', 'Open', $assigned_id, $created)");
-                echo "SUCESSFUL!!!";
-        
-        
             }else{
                 echo "Error.";
             }

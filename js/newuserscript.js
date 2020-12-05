@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function(){
             httpR.onreadystatechange = function(){
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 200){
                     var r = httpR.responseText;
-                    document.getElementById("form-error").innerHTML = r;
+                    alert("New user added.");
                 }
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 404){
                     alert('ERROR - File not found.');

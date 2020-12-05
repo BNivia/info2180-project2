@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function(e){
     var title = document.getElementById('title');
     var description = document.getElementById('desc');
     var assign = document.getElementById('select');
-    var type = document.getElementById('type').value;
-    var priority = document.getElementById('priority').value;
     var mssg = document.getElementById('form-error');
     let btn = document.getElementById('newissue-btn');
     let rgex = /^[A-Za-z.\s-]+$/;
@@ -24,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function(e){
     httpR.send();
 
     btn.addEventListener('click', function(e){
+        var priority = document.getElementById('priority').value;
+        var type = document.getElementById('type').value;
         e.preventDefault();
         var assign = document.getElementById('select');
         console.log("new value");
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(e){
             httpR.onreadystatechange = function(){
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 200){
                     var r = httpR.responseText;
-                    mssg.innerHTML = r;
+                    alert("New issue added.");
                 }
                 if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 404){
                     alert('ERROR - File not found.');

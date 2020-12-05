@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var pwrd_regex = /^[0-9a-zA-Z]{8,}$/
     var e_regex = /.{1,}@[^.]{1,}/;
     var count = 0;
+    var u_type;
 
     btn.addEventListener('click', function (e){
         e.preventDefault();

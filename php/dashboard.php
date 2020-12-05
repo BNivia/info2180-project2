@@ -18,7 +18,7 @@
         $newidsql = $conn->query("SELECT `id` FROM `users` WHERE email = '$email'");
         $my_id = $newidsql->fetchAll(PDO::FETCH_ASSOC);
         $id = intval($my_id[0]);
-        
+
         if($_POST["query"] == "all"){      
 
             $sql = $conn->query("SELECT s.id, s.title, s.type, s.status , u.firstname, u.lastname, s.created 
@@ -49,11 +49,20 @@
     }
 ?>
 
+
 <?php foreach ($results as $row): ?>
     <tr>
-        <td scope="col"><b>#<?= $row['id']?></b>  <a href="../html/FullDetailsPage.html?query=<?= $row['id']?>"><?=$row['title']; ?></a>   </td>
+        <td ><b>#<?= $row['id']?></b>  <a href="../html/FullDetailsPagehtml.php?query=<?= $row['id']?>"><?=$row['title']; ?></a>   </td>
         <td scope="col"><?= $row['type']; ?></td>
-        <td scope="col"><?= $row['status']; ?></td>
+        <? if ($row['status'] == 'Open'):?>
+            <td scope="col" class="center"><p id="open"><?= $row['status']; ?></p></td>
+        <? endif;?>
+        <? if ($row['status'] == 'In Progress'):?>
+            <td scope="col" class="center"><p id="progress"><?= $row['status']; ?></p></td>
+        <? endif;?>
+        <? if ($row['status'] == 'Closed'):?>
+            <td scope="col" class="center"><p id="closed"><?= $row['status']; ?></p></td>
+        <? endif;?>
         <td scope="col"><?= $row['firstname'];?> <?=$row['lastname']; ?></td>
         <td scope="col"><?= $row['created']; ?></td>
     </tr>

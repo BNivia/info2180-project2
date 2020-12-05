@@ -1,3 +1,7 @@
+<?php
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,20 +13,35 @@
         <link rel="stylesheet" type="text/css" href="../css/newuser.css">
         <script type= "text/javascript" src="../js/displayIssue.js"></script>
     </head>
-    <div id="conatiner">
+    <body>
+        <div class="h-container">
             <header>
-                <h3>BugMe Issue Tracker</h3>
+                <ul>
+                    <li><img src="../css/bug.png"></li>
+                    <li><h1>BugMe Issue Tracker</h1></li>
+                </ul>
             </header>
+        </div>
+       
             <aside id="sidebar">
                 
                     <li><img src="../css/home.png"><a class="link" href="dashhtml.php">Home</a></li>
-                    <li><img src="../css/adduser.png"><a class="link" href="newUser.php">Add User</a></li>
+                    <?php if ($_SESSION['email'] == 'admin@project2.com'):?>
+                        <li><img src="../css/adduser.png"><a class="link" href="newUser.php">Add User</a></li>
+                    <?php endif; ?>
                     <li><img src="../css/add.png"><a class="link" href="NewIssuehtml.php">New Issue</a></li>
-                    <li><img src="../css/logout.png"><a class="link" href="logout.php">Logout</a></li>
+                    <li><img src="../css/logout.png"><a class="link" href="../php/logout.php">Logout</a></li>
                 
             </aside>
         </div>
-    <body>
-        <div id="main"></div>     
+    
+        <div id="main">
+            
+            <div id="item">
+
+            </div>
+            
+
+        </div>     
     </body>
 </html>

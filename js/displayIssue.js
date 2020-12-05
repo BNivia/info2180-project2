@@ -1,5 +1,7 @@
 //JavaScript for BugMe Issue Tracker
 
+var id = window.location.search.slice(1);
+
 document.addEventListener('DOMContentLoaded', function(){
     
     httpR = new XMLHttpRequest();
@@ -16,13 +18,34 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    var url = "../php/displayIssue.php" + window.location.search;
-    console.log(url);
-    httpR.requestType = "json"
-    httpR.open('GET', url);
-    httpR.send();
+    httpR.open('POST', '../php/displayIssue.php', true);
+    httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    httpR.send(id);
+
+});
+
+function updateRecord(search)
+{
+    httpR = new XMLHttpRequest();
+    searchVal = id +"&" + search;
+    httpR.onreadystatechange = function()
+    {
+        if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 200)
+        {
+            updateFields(httpR.responseText);
+        }
+        if (httpR.readyState === XMLHttpRequest.DONE && httpR.status === 404)
+        {
+            alert('ERROR - File not found.');
+        }
+    }
     
-    });
+    console.log(searchVal);
+    httpR.open('POST', '../php/displayIssue.php', true);
+    httpR.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    httpR.send(searchVal);
+}
+
 
 function updateFields(text)
 {
@@ -34,5 +57,22 @@ function updateFields(text)
     //Get the elements at which I will need to insert the data from the database
     var issue = document.getElementById("main");
     issue.innerHTML = text;
+    
+    closedBtn = document.getElementById("closed");
+    console.log(closedBtn);
+    progressBtn = document.getElementById("progress");
 
+    closedBtn.addEventListener("click",function() 
+    {
+        
+        updateRecord("mark=closed");
+        location.reload();
+    
+    });
+
+    progressBtn.addEventListener("click",function() 
+    {
+        updateRecord("mark=progress");
+        location.reload();
+    });
 }
